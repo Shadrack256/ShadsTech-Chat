@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --green: #00a884;
+  --bg: #0b141a;
+  --panel: #111b21;
+  --panel-2: #1f2c34;
+  --text: #e9edef;
+  --muted: #8696a0;
+  --danger: #ff6b6b;
+  --ok: #25d366;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 50% -10%, #123f38, var(--bg) 60%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--panel);
+  border: 1px solid var(--panel-2);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+}
+
+.brand { text-align: center; margin-bottom: 22px; }
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #04231c;
+  background: linear-gradient(135deg, var(--ok), var(--green));
+}
+
+.brand h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: .3px; }
+.tagline  { margin: 0; font-size: 13px; color: var(--muted); }
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: var(--bg);
+  padding: 5px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  padding: 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab.active { background: var(--panel-2); color: var(--text); }
+
+.form { display: grid; gap: 14px; }
+.form.hidden { display: none; }
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-2);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus { border-color: var(--green); }
+
+.btn-primary {
+  margin-top: 4px;
+  padding: 13px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--ok), var(--green));
+  color: #04231c;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:hover { filter: brightness(1.08); }
+
+.msg { min-height: 18px; margin: 14px 0 0; font-size: 13px; text-align: center; color: var(--muted); }
+.msg.error   { color: var(--danger); }
+.msg.success { color: var(--ok); }
+.msg.info    { color: var(--muted); }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShadsTech Chat — Sign in</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <main class="auth-card">
+    <div class="brand">
+      <div class="brand-logo">S</div>
+      <h1>ShadsTech Chat</h1>
+      <p class="tagline">Simple. Private. Realtime.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="login" type="button">Log in</button>
+      <button class="tab" data-tab="signup" type="button">Sign up</button>
+    </div>
+
+    <form id="login-form" class="form">
+      <label>
+        Email
+        <input type="email" id="login-email" required autocomplete="email" />
+      </label>
+      <label>
+        Password
+        <input type="password" id="login-password" required minlength="6" autocomplete="current-password" />
+      </label>
+      <button type="submit" class="btn-primary">Log in</button>
+    </form>
+
+    <form id="signup-form" class="form hidden">
+      <label>
+        Username
+        <input type="text" id="signup-username" required minlength="3" maxlength="20"
+               pattern="[A-Za-z0-9_]+" autocomplete="username" />
+      </label>
+      <label>
+        Email
+        <input type="email" id="signup-email" required autocomplete="email" />
+      </label>
+      <label>
+        Password
+        <input type="password" id="signup-password" required minlength="6" autocomplete="new-password" />
+      </label>
+      <button type="submit" class="btn-primary">Create account</button>
+    </form>
+
+    <p id="auth-msg" class="msg" role="status"></p>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
